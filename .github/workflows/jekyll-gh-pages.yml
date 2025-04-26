@@ -45,9 +45,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Replace Coze Token
-        run: |
-          sed -i "s|%%COZE_TOKEN%%|${{ secrets.COZE_TOKEN }}|g" index.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
