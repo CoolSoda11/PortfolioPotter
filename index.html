@@ -13,11 +13,13 @@
     botId: '7492951980739346487',
     isIframe: false,
   },
-  auth:  {
-    type: 'token',
-    token: 'pat_vr0Bv2i2qDJAZCor9S3Ra2gOfWMRKhYy7ZsMYZsx2sjpDPesjPl7OHc1LkEz72sS',
-    onRefreshToken: async () => 'pat_vr0Bv2i2qDJAZCor9S3Ra2gOfWMRKhYy7ZsMYZsx2sjpDPesjPl7OHc1LkEz72sS',
-  },
+  auth: {
+          type: 'token',
+          token: 'pat_vr0Bv2i2qDJAZCor9S3Ra2gOfWMRKhYy7ZsMYZsx2sjpDPesjPl7OHc1LkEz72sS',
+          onRefreshToken: function () {
+            return 'pat_vr0Bv2i2qDJAZCor9S3Ra2gOfWMRKhYy7ZsMYZsx2sjpDPesjPl7OHc1LkEz72sS'
+          }
+        },
   userInfo: {
       id: '123',
       url: 'https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/obric/coze/favicon.1970.png',
