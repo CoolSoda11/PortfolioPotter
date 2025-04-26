@@ -1,41 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>PortfolioPotter AI</title>
 </head>
 <body>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
-      const cozeWebSDK = new CozeWebSDK.WebChatClient({
-  config: {
-    botId: '7492951980739346487',
-    isIframe: false,
-  },
-  auth: {
+      new CozeWebSDK.WebChatClient({
+        config: { bot_id: '7492951980739346487' },
+        componentProps: { title: 'Coze' },
+        auth: {
           type: 'token',
-          token: 'COZE_TOKEN',
-          onRefreshToken: function () {
-            return 'COZE_TOKEN'
-          }
-        },
-  userInfo: {
-      id: '123',
-      
-      nickname: '3qweqweqwe',
-    },
-    ui: {
-      base: {
-          layout: 'pc',
-          zIndex: 1000,
-      },
-      asstBtn: {
-          isNeed: false,
-      },
-    },
-});
-
+          token: 'COZE_TOKEN',  <!-- 这里会被 Actions 替换 -->
+          onRefreshToken: () => 'COZE_TOKEN'
+        }
+      });
     </script>
 </body>
 </html>
