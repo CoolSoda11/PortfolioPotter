@@ -7,14 +7,15 @@
 <body>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
-      new CozeWebSDK.WebChatClient({
+      const cozeWebSDK = new CozeWebSDK.WebChatClient({
         config: {
           bot_id: '7492951980739346487',
         },
         ui: {
             chatBot: {
                 title: "PortfolioPotter",
-                width: 1000,
+                uploadable: true,
+                width: 850,
             },
           base: {
               icon: 'https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/obric/coze/favicon.1970.png',
