@@ -17,12 +17,7 @@
 <body>
 <h1>Hello World</h1>
 <div id="position_demo"></div>
-    <button onClick={() => {
-        cozeWebSDK.showChatBot();
-    }}>Show chatbot</button>
-    <button onClick={() => {
-        cozeWebSDK.hideChatBot();
-    }}>Hide chatbot</button>
+
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
     const cozeWebSDK = new CozeWebSDK.WebChatClient({
@@ -31,14 +26,7 @@
     botId: '7492951980739346487',
     isIframe: false,
   },
- componentProps: {
-          title: 'PortfolioPotter',
-          layout: 'embedded',  // 关键配置：嵌入式布局
-          container: {
-            target: '#position_demo',  // 绑定到指定容器
-            autoShow: true  // 自动显示
-          }
- },
+ 
   auth:  {
       // Authentication methods, the default type is 'unauth', which means no authentication is required; it is recommended to set it to 'token', indicating authentication through PAT (Personal Access Token) or OAuth.
     type: 'token',    
@@ -50,7 +38,9 @@
     ui:{
       chatBot: {
         title: "PortfolioPotter",
-        uploadable: true
+        uploadable: true,
+        el: undefined,
+         width: 800, 
       },
     base: {
           icon: 'https://i.ibb.co/fByM3F7/Logo.png',
@@ -58,7 +48,7 @@
           zIndex: 1000,
       },
       asstBtn: {
-          isNeed: false,
+          isNeed: true,
       },
     }
 });
