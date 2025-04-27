@@ -1,42 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
+    <style>
+        /* Customize the position of the floating entrance */
+        #position_demo {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
+    </style>
 </head>
 <body>
+<h1>Hello World</h1>
+<div id="position_demo"></div>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
-      const cozeWebSDK = new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: '7492951980739346487',
-        },
-        ui: {
-            chatBot: {
-                title: "PortfolioPotter",
-                uploadable: true,
-                width: 800,
-            },
-          base: {
-          icon: 'https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/obric/coze/favicon.1970.png',
-          layout: 'pc',
-          zIndex: 1000,
-      },
-            asstBtn: {
-                isNeed: false,
-            }
-            
-        },
-
-        auth: {
-          type: 'token',
-          token: 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
-          onRefreshToken: function () {
-            return 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP'
-          }
-        }      
-      });
-        chatBot.showChatBot();
-    </script>
+    const cozeWebSDK = new CozeWebSDK.WebChatClient({
+  config: {
+      // Agent ID
+    botId: '7492951980739346487',
+  },
+  auth:  {
+      // Authentication methods, the default type is 'unauth', which means no authentication is required; it is recommended to set it to 'token', indicating authentication through PAT (Personal Access Token) or OAuth.
+    type: 'token',    
+     // When the type is set to 'token', it is necessary to configure a PAT (Personal Access Token) or OAuth access token for authentication.
+    token: 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
+    // When the access token expires, use a new token and set it as needed.
+    onRefreshToken: () => 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
+  },ui:{
+      chatBot: {
+        title: "PortfolioPotter",
+        uploadable: true
+      }}
+});
+</script>
 </body>
 </html>
