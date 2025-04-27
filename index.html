@@ -17,12 +17,14 @@
 <body>
 <h1>Hello World</h1>
 <div id="position_demo"></div>
+    cozeWebSDK.showChatBot();
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
     const cozeWebSDK = new CozeWebSDK.WebChatClient({
   config: {
       // Agent ID
     botId: '7492951980739346487',
+    isIframe: false,
   },
  componentProps: {
           title: 'PortfolioPotter',
@@ -39,11 +41,21 @@
     token: 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
     // When the access token expires, use a new token and set it as needed.
     onRefreshToken: () => 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
-  },ui:{
+  },
+    ui:{
       chatBot: {
         title: "PortfolioPotter",
         uploadable: true
-      }}
+      },
+    base: {
+          icon: 'https://i.ibb.co/fByM3F7/Logo.png',
+          layout: 'pc',
+          zIndex: 1000,
+      },
+      asstBtn: {
+          isNeed: false,
+      },
+    }
 });
 </script>
 </body>
