@@ -17,7 +17,12 @@
 <body>
 <h1>Hello World</h1>
 <div id="position_demo"></div>
-    cozeWebSDK.showChatBot();
+    <button onClick={() => {
+        cozeWebSDK.showChatBot();
+    }}>Show chatbot</button>
+    <button onClick={() => {
+        cozeWebSDK.hideChatBot();
+    }}>Hide chatbot</button>
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
     const cozeWebSDK = new CozeWebSDK.WebChatClient({
