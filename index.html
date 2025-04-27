@@ -5,24 +5,21 @@
         /* Customize the position of the floating entrance */
         #position_demo {
             position: absolute;
-            right: 1000px;
-            bottom: 200px;
+            right: 10px;
+            bottom: 20px;
         }
     </style>
 </head>
 <body>
 <h1>Hello World</h1>
 <div id="position_demo"></div>
-
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
     <script>
     const cozeWebSDK = new CozeWebSDK.WebChatClient({
   config: {
       // Agent ID
     botId: '7492951980739346487',
-    isIframe: false,
   },
- 
   auth:  {
       // Authentication methods, the default type is 'unauth', which means no authentication is required; it is recommended to set it to 'token', indicating authentication through PAT (Personal Access Token) or OAuth.
     type: 'token',    
@@ -30,23 +27,16 @@
     token: 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
     // When the access token expires, use a new token and set it as needed.
     onRefreshToken: () => 'pat_2ECxjWAAF0Zlu7LlcyRfHegMUeXdKIF2kozfLtTcG0Vm6ujeQC0fc1ZOGrYmODbP',
-  },
-    ui:{
+  },ui:{
+      base: {
+          icon: 'https://i.ibb.co/QgV0QSW/Logo-1.png'
+      },
       chatBot: {
-        title: "PortfolioPotter",
+        title: "Intelligent Customer Service",
         uploadable: true,
-        el: undefined,
-         width: 800, 
+          width: 850
       },
-    base: {
-          icon: 'https://i.ibb.co/QgV0QSW/Logo-1.png',
-          //layout: 'pc',
-          zIndex: 1000,
-      },
-      asstBtn: {
-          isNeed: true,
-      },
-    }
+  }
 });
 </script>
 </body>
